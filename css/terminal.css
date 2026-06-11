@@ -1,0 +1,159 @@
+/* ============ 터미널 ============ */
+.terminal-screen {
+  position:fixed; inset:0;
+  background:#0a0a0a;
+  color:#b8b8b0;
+  font-family:'JetBrains Mono', ui-monospace, monospace;
+  z-index:500;
+  display:flex;
+  flex-direction:column;
+  font-size:12px;
+  line-height:1.7;
+}
+.terminal-header {
+  padding:10px 16px;
+  border-bottom:1px solid #2a2a28;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:11px;
+  letter-spacing:0.5px;
+  flex-shrink:0;
+}
+.terminal-title { color:#6a6a60; }
+.terminal-trace {
+  color:#9a4a4a;
+  animation:tracePulse 1.5s infinite;
+}
+.trace-icon { margin-right:4px; }
+@keyframes tracePulse {
+  0%,100% { opacity:1; }
+  50% { opacity:0.5; }
+}
+
+.terminal-body {
+  flex:1;
+  overflow-y:auto;
+  padding:14px 20px;
+}
+.terminal-line {
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+.terminal-line.terminal-input-echo {
+  color:#d4d4c8;
+}
+.terminal-line.terminal-input-echo::before {
+  content:'> ';
+  color:#6a9a6a;
+}
+.terminal-info { color:#6a6a60; }
+.terminal-output {
+  color:#8a8a80;
+  padding-left:14px;
+}
+.terminal-divider {
+  color:#3a3a35;
+  margin:4px 0;
+}
+.terminal-board-row {
+  display:flex;
+  gap:14px;
+  cursor:pointer;
+}
+.terminal-board-row:hover { background:#1a1a18; }
+.terminal-board-num {
+  color:#6a6a60;
+  min-width:30px;
+  flex-shrink:0;
+}
+.terminal-board-title { color:#8a8a80; }
+.terminal-board-row.deleted { cursor:not-allowed; }
+.terminal-board-row.deleted .terminal-board-title { color:#5a4a4a; }
+.terminal-post-back {
+  background:none;
+  border:1px solid #4a4a45;
+  color:#8a8a80;
+  padding:4px 10px;
+  font-family:inherit;
+  font-size:11px;
+  cursor:pointer;
+  margin-top:10px;
+}
+.terminal-post-back:hover { background:#1a1a18; color:#d4d4c8; }
+.terminal-post-title {
+  color:#d4d4c8;
+  margin:8px 0;
+}
+.terminal-warn { color:#9a7a4a; }
+.terminal-error { color:#9a4a4a; }
+
+.terminal-input-line {
+  padding:8px 20px;
+  border-top:1px solid #2a2a28;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-shrink:0;
+}
+.terminal-prompt { color:#6a9a6a; }
+#terminal-input {
+  flex:1;
+  background:transparent;
+  border:none;
+  outline:none;
+  color:#d4d4c8;
+  font-family:inherit;
+  font-size:12px;
+}
+#terminal-input::placeholder { color:#4a4a45; }
+
+.terminal-quick {
+  display:none;
+  padding:8px 14px;
+  gap:6px;
+  border-top:1px solid #2a2a28;
+  overflow-x:auto;
+  flex-shrink:0;
+}
+.terminal-quick button {
+  background:transparent;
+  border:1px solid #4a4a45;
+  color:#8a8a80;
+  padding:6px 10px;
+  font-family:inherit;
+  font-size:11px;
+  cursor:pointer;
+  white-space:nowrap;
+  border-radius:4px;
+}
+.terminal-quick button:hover { background:#1a1a18; color:#d4d4c8; }
+
+/* 일기 스타일 */
+.diary-entry {
+  margin:10px 0;
+  padding-left:14px;
+  border-left:1px solid #3a3a35;
+}
+.diary-date {
+  color:#6a6a60;
+  font-size:11px;
+  margin-bottom:4px;
+}
+.diary-text {
+  color:#b8b8b0;
+  white-space:pre-wrap;
+}
+
+/* 메시지 */
+.msg-row {
+  display:flex;
+  gap:14px;
+  padding:4px 0;
+}
+.msg-from {
+  color:#6a6a60;
+  min-width:90px;
+  flex-shrink:0;
+}
+.msg-text { color:#b8b8b0; }
